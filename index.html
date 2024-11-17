@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Life XXL🏋️‍♂️</title>
+    </head>
+    
+    <body>
+            <style>
+                
+                .btn_Button a {
+                    background-color: #c4af53;
+                    padding: 10px 30px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    color: white             
+                }
+      
+                .btn_Button a:hover {
+                    color: #000000; /* Cambiar color del texto al pasar el mouse */
+                }
+
+                .btn_Button_Flotante {
+                    position: fixed;
+                    bottom: 20px;
+                    left: 50%;
+                    transform: translate(-50%, -200%);
+                    background-color: #c4af53;
+                    padding: 10px 30px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    color: white;
+                    display: none;           
+                }
+      
+                .btn_Button_Flotante a:hover {
+                    color: #000000; /* Cambiar color del texto al pasar el mouse */
+                }
+
+                h1 {color:rgb(189, 151, 28)}
+                h2 {color:rgb(189, 151, 28)}
+                h4 {color:rgb(147, 155, 42)}
+                p {color:rgb(255, 255, 255)}
+                #p2 {color:rgb(255, 255, 255)}
+                #h1b {color:rgb(147, 155, 42)}
+                #p2 {color:rgb(0, 0, 0)}
+                #Foto_logo {
+                    margin: 0 auto;
+                    display: block;
+                }
+                body {background-color:rgb(43, 40, 40)} 
+                     
+                nav {
+                    font-family: Ruge Boogie;
+                    background-color: #535353; /* Color de fondo del menú */
+                    width: 100%; /* Ancho del menú al 100% del contenedor */
+                    height: 50px; /* Altura del menú */
+                    display: flex; /* Activa el Flexbox */
+                    justify-content: space-between; /* Espacia los elementos de manera equitativa */
+                    align-items: center; /* Centra verticalmente los elementos dentro de la barra */
+                    position: sticky; /* Hace que la barra sea "pegajosa" */
+                    top: 0; /* Fija la barra en la parte superior */
+                    z-index: 1000; /* Asegura que la barra esté encima del contenido */
+                }
+
+                nav ul {
+                    font-family: Ruge Boogie;
+                    list-style: none; /* Elimina los marcadores de lista */
+                    padding: 0;
+                    margin: 0;
+                    display: flex; /* Los elementos del menú en línea */
+                }
+
+                nav ul li {
+                    font-family: Ruge Boogie;
+                    position: relative; /* Necesario para que el submenú se posicione correctamente */
+                }
+
+                nav ul li a {
+                    font-family: Ruge Boogie;
+                    display: block;
+                    font-size: 20px;
+                    color: white; /* Color del texto */
+                    padding: 19px;
+                    text-decoration: none;
+                }
+
+                nav ul li a:hover {
+                    font-family: Ruge Boogie;
+                    color: rgb(228, 192, 35); /* Cambiar color del texto al pasar el mouse */
+                }
+                
+                nav ul ul {
+                    font-family: Ruge Boogie;
+                    display: none; /* Oculta los submenús por defecto */
+                    position: absolute;
+                    top: 92%; /* Aparece debajo del ítem principal */
+                    left: 10px;
+                    background-color: #444444; /* Color de fondo del menú */
+                    padding: 0;
+                    margin: 50;
+                    list-style: none;
+                    min-width: 125px; /* Ancho mínimo del submenú */
+                }
+                
+                nav ul ul li {
+                    font-family: Ruge Boogie;
+                    width: 100%;
+                }
+
+                nav ul li:hover > ul {
+                    font-family: Ruge Boogie;
+                    display: block; /* Muestra el submenú al hacer hover */
+                }
+            
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 15;
+                    padding: 0;
+                }
+   
+                .info-box {
+                    background-color: #f9f9f9;
+                    border: 1px solid #ddd;
+                    padding: 25px;
+                    margin: 5px;
+                }
+
+                /* Estilo para párrafos con la clase "importante" */
+                .importante {
+                    font-weight: bold;
+                    color: rgb(61, 208, 247)
+                }
+
+                /* Estilo para párrafos con el ID "destacado" */
+                #destacado {
+                    background-color: yellow;
+                    font-family:Cursive;
+                }
+                
+                .justificado {
+                    text-align: justify; /* Justifica el texto */
+                    margin: 12px; /* Aplica un margen de 20px alrededor del párrafo */
+                }
+
+                .imagenes {
+                    margin: 12px; /* Aplica un margen de 20px alrededor del párrafo */    
+                }
+
+            </style>
+
+            <button class="btn_Button_Flotante" id="volver" onclick="volverArriba()">
+                <a>Volver arriba</a>
+            </button>
+
+            <script>
+                // Cuando el usuario hace scroll hacia abajo, se muestra el botón "Volver"
+                window.onscroll = function() {
+                    mostrarBoton();
+                };
+
+                function mostrarBoton() {
+                    var volver = document.getElementById("volver");
+                    // Si la posición del scroll es mayor a 200px desde la parte superior, muestra el botón
+                    if (document.body.scrollTop > 600|| document.documentElement.scrollTop > 600) {
+                        volver.style.display = "block";
+                    } else {
+                        volver.style.display = "none";
+                    }
+                }
+                
+                // Cuando se hace clic en el botón, vuelve al principio de la página
+                function volverArriba() {
+                    const scrollDuration = 700; // Duración en milisegundos (2000ms = 2 segundos)
+                    const scrollHeight = window.scrollY;
+                    const scrollStep = scrollHeight / (scrollDuration / 15); // Divide la duración total en pasos
+
+                    function step() {
+                        if (window.scrollY > 0) {
+                            window.scrollBy(0, -scrollStep);
+                            requestAnimationFrame(step);
+                        }
+                    }
+
+                    requestAnimationFrame(step);
+                }
+            </script>
+
+            <img id="Foto_logo" src="zyro-image.png" alt="" width="150px" height="155px">
+           
+            <br>
+
+            <nav #Menu> 
+                <ul>
+                    <li><a href="#Temas">Temas</a></li>
+
+                    <li><a href="#Motivación"> Motivación</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Subtema 1</a></li>
+                            <li><a href="#">Subtema 2</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#Gym">Gym</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Subtema 1</a></li>
+                            <li><a href="#">Subtema 2</a></li>
+                        </ul>
+                    </li>                    
+
+                    <li><a href="#Desarrollo Personal">Desarrollo Personal</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Subtema 1</a></li>
+                            <li><a href="#">Subtema 2</a></li>
+                        </ul>
+                    </li>   
+
+                    <li><a href="#Educación">Educación</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Subtema 1</a></li>
+                            <li><a href="#">Subtema 2</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#Emprendimiento">Emprendimiento</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Subtema 1</a></li>
+                            <li><a href="#">Subtema 2</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#Bienestar Mental">Bienestar Mental</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Subtema 1</a></li>
+                            <li><a href="#">Subtema 2</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#Estilo de Vida">Estilo de Vida</a>
+
+                        <ul class="dropdown">
+                            <li><a href="#">Subtema 1</a></li>
+                            <li><a href="#">Subtema 2</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#Relaciones Personales">Relaciones Personales</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Subtema 1</a></li>
+                            <li><a href="#">Subtema 2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>    
+
+            <div class="highlight-header">
+                <h1>Bienvenido/a a nuestra página</h1>
+                <h4>Explora nuestros servicios y contáctanos</p>
+            </div>
+
+
+            <div class="info-box">
+                
+                <h2> Información importante</h2>
+                <p id="p2"> <strong>¡Bienvenido/a a Life XXL, tu refugio para la transformación y el crecimiento personal!</strong> <br>
+                    
+                    <br>
+
+                    Si estás listo/a para desatar tu potencial y llevar tu vida al siguiente nivel, has llegado al lugar adecuado. Aquí en Life XXL, nos dedicamos a inspirarte y guiarte en tu viaje hacia una versión más fuerte, más sabia y más plena de ti mismo/a. <br>
+
+                    <br>
+                        
+                    <Strong>¿Qué Puedes Esperar Aquí?</Strong>
+                        
+                    <ul> 
+                    <li> <strong> Desarrollo Personal Integral: </strong> Sumérgete en contenido que te desafiará a crecer mental, emocional y espiritualmente. Descubre estrategias probadas para mejorar tu calidad de vida. </li>
+                    <li> <strong> Rutinas de Éxito: </strong> Explora rutinas diarias, hábitos efectivos y consejos para alcanzar tus metas en el trabajo, los estudios, el gimnasio y más. ¡Cada día es una oportunidad para avanzar hacia el éxito!</li>
+                    <li> <strong> Comunidad de Crecimiento: </strong> Conéctate con otros apasionados del desarrollo personal. Comparte tus experiencias, aprende de los demás y construye una red de apoyo para tu viaje. </li>
+                    <li> <strong> Recursos Inspiradores: </strong> Desde reflexiones motivacionales hasta herramientas prácticas, te proporcionamos las herramientas que necesitas para empoderarte y alcanzar tus sueños. </li>
+                    </ul>
+                        
+                    <strong>Cómo Empezar</strong>
+
+                    <br>
+                        
+                    <ol>
+                    <li>Regístrate o inicia sesión en Life XXL.</li>
+                    <li>Explora los diversos temas y encuentra la inspiración que necesitas.</li>
+                    <li>Aplica lo aprendido en tu vida diaria y observa cómo creces.</li>
+                    <li>Únete a la conversación, comparte tus éxitos y busca apoyo en nuestra comunidad.</li>
+                    </ol>
+
+                    <strong>¡Inspírate y Crea una Vida XXL!</strong> <br>
+                        
+                    <br>
+
+                    No importa en qué etapa te encuentres en tu viaje, en Life XXL, creemos que cada día es una oportunidad para vivir en grande. Así que, ¿Estás listo/a para iniciar este emocionante viaje hacia tu mejor versión? ¡Bienvenido/a a Life XXL, donde la grandeza comienza contigo! 🌟💪 #LifeXXL #ViveEnGrande
+                </p>
+            </div>
+
+            <br>
+
+            <button class= "btn_Button">
+                <a href="Primer registro.html" style="text-decoration: none;">¡Haz clic aquí!</a>
+            </button>
+
+        </section>
+
+            <br>
+
+            <article>
+                <header>
+                    <h1> Todo sobre Life XXL</h1>
+                <p>
+                    <section id="Temas">
+                    <h2 id="h1b" id="Titulo-secundario">Temas a tratar</h2>
+
+                    <ol id="Temas-a-ver">
+                        <h1>Inspiración y Motivación</h1>
+                        
+                        <button class="btn_Button">
+                            <a href="Motivación.html" style="text-decoration: none"> Motivación</a>
+                        </button>
+
+                        <br>
+                        <br>
+
+                        <li><a href="https://www.toulouselautrec.edu.pe/blogs/materiales-dibujo-principiantes">Gym</a></a></li>
+                        <li><a href="https://arqdis.uniandes.edu.co/pregrado/arq/cursos/dibujo-de-observacion/#:~:text=El%20dibujo%20de%20observaci%C3%B3n%20implica,un%20nuevo%20objeto%3A%20el%20dibujo.">Desarrollo Personal</a></a></li>
+                        <li><a href="https://www.ttamayo.com/2020/01/dibujar-la-figura-humana/">Educación y Carrera</a></a></li>
+                        <li><a href="https://design.tutsplus.com/es/articles/how-to-create-interesting-composition-in-drawing--cms-27402">Emprendimiento</a></a></li>
+                        <li><a href="https://www.jobatus.mx/noticias/como-se-evalua-el-dibujo">Bienestar Mental</a></a></li>
+                        <li><a href="https://www.jobatus.mx/noticias/como-se-evalua-el-dibujo">Estilo de Vida Saludable</a></a></li>
+                        <li><a href="https://www.jobatus.mx/noticias/como-se-evalua-el-dibujo">Relaciones Personales</a></a></li>
+                    </ol> <!--Agregar un código para que al darle clic a algún tema, se vaya a la sección donde está la información referente-->
+                    </p>
+                    
+                </section>
+                    
+                    <h2 id="h1b">¿Qué es Life XXL? 🏋️‍♂️</h2>
+                
+                    <div class="justificado">
+                        
+                        <p>
+                        
+                        Life XXL es un refugio digital lleno de inspiración y recursos diseñados para guiar a individuos de todas las edades y etapas de la vida hacia una transformación integral. Al explorar Life XXL, te sumergirás en un espacio vibrante y motivador que busca potenciar cada aspecto de tu existencia. <br>
+                    
+                        <br>
+                    
+                        Desde la primera visita a nuestra plataforma, serás recibido por una interfaz diseñada para despertar tu interés y motivarte a emprender un viaje de mejora personal. Nuestra comunidad en línea está creada de manera intuitiva, facilitando la navegación tanto para aquellos que dan sus primeros pasos como para aquellos que buscan perfeccionar sus habilidades existentes. <br>
+                        <br>
+
+                        En resumen, Life XXL va más allá de ser un simple canal de desarrollo personal y bienestar. Es un espacio en línea apasionante que fomenta la grandeza, ofrece recursos integrales y permite a personas de todas partes del mundo explorar su potencial, crecer en todas las áreas de sus vidas y alcanzar su mejor versión de manera emocionante y educativa. ¡Únete a nosotros en este viaje hacia la grandeza y transformación! 🚀💫 #LifeXXL #CrecimientoPersonal 🌈✨
+                        </p>
+                    
+                    </div>
+
+                </header>
+            </article>
+
+            <div class="imagenes">
+
+            <img src="Imagen 1.jpg" alt="" width="1309px" height="676px">        
+
+            </div>
+
+            <aside>
+                <H3 id="Parrafo-final"> Autor</H3>
+                    <p>Esta pagína web fue creada por Andrés Sebastián Ahumada García, una persona con mentalidad de cambío y un apasionado estudiante de programación. 
+                    Puedes escribirme un correo a <a href="https://www.google.com/intl/es-419/gmail/about/">andres.aagahumada@gmail.com</a>
+                    </p>
+            </aside>
+
+            <aside>
+                    <p>Todos los derechos reservados - FOOTE </p>
+            </aside>
+    </body>
+</html>

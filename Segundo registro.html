@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Life XXL 🏋️‍♂️</title>
+    </head>
+    <body>
+            <style>
+                body {background-color:rgb(43, 40, 40)}
+                body {
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center; /* Centra horizontalmente */
+                    align-items: center; /* Centra verticalmente */
+                    height: 100vh; /* Ocupa la altura completa del viewport */
+                }
+        
+                /* Estilo para el texto centrado */
+                .texto-centrado {
+                    text-align: center;
+                    font-size: 24px; /* Cambia el tamaño del texto a 24 píxeles */
+                }
+        
+                .btn {
+                    background-color: #c4af53;
+                    color: white;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+        
+                .Casillas label,
+                .Casillas input[type="text"] {
+                    width: 100px; /* Puedes ajustar el valor según tu preferencia */
+                }
+        
+                /* Añadir un margen entre las etiquetas y los campos de entrada */
+                .Casillas label {
+                    margin-right: 10px; /* Puedes ajustar el valor según tu preferencia */
+                }
+        
+                .Genero label,
+                .Genero input[type="text"] {
+                    width: 406px; /* Puedes ajustar el valor según tu preferencia */
+                }
+        
+                /* Añadir un margen entre las etiquetas y los campos de entrada */
+                .Genero label {
+                    margin-right: 10px; /* Puedes ajustar el valor según tu preferencia */
+                }
+            </style>
+    
+    
+        <div class="texto-centrado">
+            <h2>Información básica</h2>
+            <h3>Introduce tu fecha de nacimiento y tu sexo.</h3>
+        
+            <form class="Casillas">
+                <label for="Día">Día</label>
+                <input type="text" id="Día" name="Día">
+                <label for="Mes">Mes</label>
+                <input type="text" id="Mes" name="Mes">
+                <label for="Año">Año</label>
+                <input type="text" id="Año" name="Año">
+            </form>
+        
+            <br>
+        
+            <form class="Genero">
+                <label for="Genero">Género</label>
+                <input type="text" id="Genero" name="Genero">
+                <select id="Genero" name="Genero">
+                    <option value="Mujer">Mujer</option>
+                    <option value="Hombre">Hombre</option>
+                    <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+                    <option value="Otro">Otro</option>
+                </select>
+        
+            </form>
+        
+            <br>
+        
+            <button class="btn"><a href="Primer registro.html">Volver</a></button>
+            <button class="btn"><a href="index.html">Finalizar</a></button>
+    </body>
+</html>
